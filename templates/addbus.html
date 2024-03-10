@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+{% include 'AdminNavBar1.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Bus</title>
+    <link rel="stylesheet" href="{% static 'css/addbuses.css' %}"> <!-- Include your CSS file path -->
+</head>
+<body>
+
+<div class="form-container">
+    <form method="post" action="{% url 'add_bus' %}" class="bus-form">
+        {% csrf_token %}
+        <h2>Add Bus</h2>
+
+        <label for="bus_type">Bus Type:</label>
+<select name="bus_type" required>
+    <option value="AC">AC</option>
+    <option value="NON-AC">NON-AC</option>
+</select>
+
+
+        <label for="bus_name">Bus Name:</label>
+        <input type="text" name="bus_name" required>
+
+        <label for="bus_number">Bus Number:</label>
+        <input type="text" name="bus_number" required>
+
+        <label for="max_capacity">Max Capacity:</label>
+        <input type="number" name="max_capacity" required>
+
+        <input type="submit" value="Add Bus">
+    </form>
+</div>
+
+</body>
+</html>

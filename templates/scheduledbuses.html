@@ -1,0 +1,56 @@
+<!-- scheduledbuses.html -->
+
+<!DOCTYPE html>
+{% load static %}
+{% include 'AdminNavBar1.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheduled Buses</title>
+    <link rel="stylesheet" href="{% static 'css/scheduledbuses.css' %}"> <!-- Add your CSS file link -->
+</head>
+<body class="scheduled-buses">
+
+<div class="table-container">
+    <h1>Scheduled Buses</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Route Name</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Timings</th>
+                <th>Price</th>
+                <th>Allocated Buses</th>
+
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for route in routes %}
+                <tr>
+                    <td>{{ route.route_name }}</td>
+                    <td>{{ route.source }}</td>
+                    <td>{{ route.destination }}</td>
+                    <td>{{ route.date }}</td>
+                    <td>{{ route.timings }}</td>
+                    <td>{{ route.price }}</td>
+                    <td>
+                        {% for bus in route.buses.all %}
+                            {{ bus.bus_name }},
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <!-- Add the delete button with a link to the delete route view -->
+                        <a href="{% url 'delete_route' route.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

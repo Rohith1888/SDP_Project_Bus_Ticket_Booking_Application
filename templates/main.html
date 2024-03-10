@@ -1,0 +1,36 @@
+<!-- home.html -->
+<!DOCTYPE html>
+{% load static %}
+{% include 'NavBar.html'%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Search</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Bus Search</h1>
+
+    <form method="#" action="{% url 'SignupAndSignin'%}">
+
+
+        <label for="from_location">From:</label>
+        <input type="text" id="from_location" name="from_location" required>
+
+        <label for="to_location">To:</label>
+        <input type="text" id="to_location" name="to_location" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Search</button>
+    </form>
+
+
+</div>
+
+</body>
+</html>

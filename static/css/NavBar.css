@@ -1,0 +1,189 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background: -webkit-linear-gradient(left, #355070, #355070); /* Adjust the alpha channel as needed */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  max-width: 90%;
+  background: -webkit-linear-gradient(left, #355070, #355070); /* Adjust the alpha channel as needed */
+}
+
+
+
+nav .navbar .logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+  align-items: start;
+}
+
+nav .navbar .menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .menu li {
+  list-style: none;
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  padding: 0px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 10px; /* Add margin for spacing if needed */
+}
+
+.logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+/* If you want to move the logo to the very left without any margin */
+.logo {
+  margin-left: 0;
+}
+
+.logo a {
+  margin-left: 0;
+}
+
+
+.navbar .menu li:hover {
+  background-color: #fff;
+  border-radius: 10px;
+  
+}
+
+.navbar .menu li:hover a {
+  color: #000000; /* Change text color on hover */
+}
+
+/* NavBar.css */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  padding: 0px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  margin: 0;
+}

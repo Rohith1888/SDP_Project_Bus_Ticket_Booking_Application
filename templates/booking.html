@@ -1,0 +1,26 @@
+<!-- booking.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Details</title>
+    <!-- Add your styles and scripts as needed -->
+</head>
+<body>
+
+<h1>Booking Details</h1>
+
+<p>Booking ID: {{ booking.booking_id }}</p>
+<p>Bus: {{ booking.bus.bus_name }}</p>
+<p>Seats: {{ booking.seats }}</p>
+<p>Total Amount: {{ total_amount }}</p>
+
+<form method="post" action="{% url 'confirm_booking' %}">
+    {% csrf_token %}
+    <input type="hidden" name="booking_id" value="{{ booking.booking_id }}">
+    <button type="submit">Book Now</button>
+</form>
+
+</body>
+</html>

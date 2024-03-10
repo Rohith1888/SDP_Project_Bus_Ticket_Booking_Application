@@ -1,0 +1,50 @@
+<!-- listbuses.html -->
+
+<!DOCTYPE html>
+{% load static %}
+{% include 'AdminNavBar1.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Buses</title>
+    <link rel="stylesheet" href="{% static 'css/listbuses.css' %}"> <!-- Add your CSS file link -->
+</head>
+<body class="list-buses">
+
+<div class="table-container">
+    <h1>List of Buses</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Bus Type</th>
+                <th>Bus Name</th>
+                <th>Bus Number</th>
+                <th>Max Capacity</th>
+                <th>Allocated</th> <!-- New column -->
+                <th>Delete</th> <!-- New column -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for bus in buses %}
+                <tr>
+                    <td>{{ bus.bus_type }}</td>
+                    <td>{{ bus.bus_name }}</td>
+                    <td>{{ bus.bus_number }}</td>
+                    <td>{{ bus.max_capacity }}</td>
+                    <td>{% if bus.allocated %}Yes{% else %}No{% endif %}</td> <!-- New column content -->
+                    <td>
+                        {% if not bus.allocated %}
+                            <a href="{% url 'delete_bus' bus.id %}">Delete</a>
+                        {% else %}
+                            <p>Bus is allocated</p>
+                        {% endif %}
+                    </td> <!-- New column content -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

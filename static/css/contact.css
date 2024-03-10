@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+html{
+  background: #dcc7c7;
+    box-sizing:border-box;
+    background-image: url(../images/contact.jpg);
+    background-size: cover;
+    background-position: center;
+}
+*{
+  box-sizing:inherit;
+}
+body {
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form horizontally */
+  margin-top: 100px;
+  border-radius: 30px;
+  box-shadow: #8d99ae;
+}
+h1, p{
+  text-align: center;
+}
+label{
+  display:block;
+  margin:1em 0 .2em;
+}
+/* single-line text, checkbox, and button */
+input, select, textarea{
+  display:block;
+  width:100%;
+  padding:.3em;
+  font-size:20px;
+  background-color:#fbfbfb;
+  border:solid 1px #CCC;
+  resize:vertical;
+}
+textarea{
+  min-height:180px;
+}
+
+
+input[type=checkbox]{
+  display:inline;
+  width:auto;
+  color:rgb(18, 7, 37);
+}
+
+input[type=submit]{
+  background:#355070;
+  margin:1em 0 0;
+  color:white;
+  cursor: pointer;
+  border:none;
+  border-radius:8px;
+  transition:all .3s ease-out;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover{
+  background: #edf2f4;
+}
+
+/* hover and focus states */
+input[type=submit]:hover,
+input[type=submit]:focus{
+  background: #8d99ae;
+  outline:none;
+}
+
+@media screen and (min-width:600px) {
+  /*  make the form 2 columns */
+  form:after{
+    content:'';
+    display:block;
+    clear:both;
+  }
+  .column{
+    width:50%;
+    padding:1em;
+    float:left;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

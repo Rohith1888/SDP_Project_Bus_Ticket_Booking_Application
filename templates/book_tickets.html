@@ -1,0 +1,19 @@
+<!-- book_tickets.html -->
+
+{% include 'NavBar1.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Book Tickets</h2>
+    <p>Bus Details: {{ bus.bus_name }} - {{ bus.bus_number }} ({{ bus.bus_type }})</p>
+
+    <form method="post" action="{% url 'mainapp:book_tickets' bus_number=bus.bus_number %}">
+      {% csrf_token %}
+
+      <!-- Include form fields for booking details (e.g., number of seats) -->
+      <!-- Add your form fields here -->
+
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+{% endblock %}

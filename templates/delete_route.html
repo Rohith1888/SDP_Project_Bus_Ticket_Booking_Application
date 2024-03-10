@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Route</title>
+    <link rel="stylesheet" href="{% static 'css/delete_route.css' %}"> <!-- Add your CSS file link -->
+</head>
+<body>
+
+<div class="container">
+    <h1>Delete Route</h1>
+
+    <p>Are you sure you want to delete the route '{{ route.route_name }}'? This action cannot be undone.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <button type="submit">Delete Route</button>
+        <a href="{% url 'scheduled_buses' %}">Cancel</a>  <!-- Change 'scheduled_buses' to the actual URL name for scheduled buses page -->
+    </form>
+</div>
+
+</body>
+</html>

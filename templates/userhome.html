@@ -1,0 +1,96 @@
+<!-- home.html -->
+<!DOCTYPE html>
+{% load static %}
+{% include 'NavBar1.html'%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Search</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <style>
+        /* Add your custom styles here */
+        .error-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #ffcccc;
+            border: 1px solid #ff0000;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Style for the book tickets button */
+        .book-tickets-btn {
+            margin-left: 10px;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bus Search</h1>
+
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+
+        <label for="from_location">From:</label>
+        <input type="text" id="from_location" name="from_location" value="{{ request.POST.from_location }}" required>
+
+        <label for="to_location">To:</label>
+        <input type="text" id="to_location" name="to_location" value="{{ request.POST.to_location }}" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{ request.POST.date }}" required>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if messages %}
+        <!-- Error Popup -->
+        <div class="error-popup">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+
+        <!-- Trigger the error popup -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var errorPopup = document.querySelector('.error-popup');
+                errorPopup.style.display = 'block';
+
+                // Hide the error popup after 1 second
+                setTimeout(function() {
+                    errorPopup.style.display = 'none';
+                }, 1000);
+            });
+        </script>
+    {% endif %}
+
+    {% if available_buses %}
+        <h2>Available Buses</h2>
+        <ul>
+            {% for bus in available_buses %}
+                <li>
+                    {{ bus.route_name }} - {{ bus.source }} to {{ bus.destination }} ({{ bus.date }})
+                    <button class="book-tickets-btn">Book Tickets</button>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif request.method == 'POST' %}
+        <p>No scheduled buses for this route on the specified date.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

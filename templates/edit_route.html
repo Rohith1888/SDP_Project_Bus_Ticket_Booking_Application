@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+{% include 'AdminNavBar1.html'%}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Route</title>
+    <link rel="stylesheet" href="{% static 'css/edit_route.css' %}"> <!-- Add your CSS file link -->
+</head>
+<body>
+
+<div class="container">
+    <h1>Edit Route</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="route_name">Route Name:</label>
+        <input type="text" id="route_name" name="route_name" value="{{ route.route_name }}" required>
+
+        <label for="source">Source:</label>
+        <input type="text" id="source" name="source" value="{{ route.source }}" required>
+
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" name="destination" value="{{ route.destination }}" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" value="{{ route.date }}" required>
+
+        <label for="timings">Timings:</label>
+        <input type="time" id="timings" name="timings" value="{{ route.timings }}" required>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" value="{{ route.price }}" required>
+
+        <!-- If you want to edit the allocated_bus_number, include the following field -->
+        <label for="allocated_bus_number">Allocated Bus Number:</label>
+        <input type="text" id="allocated_bus_number" name="allocated_bus_number" value="{{ route.allocated_bus_number }}" required>
+
+        <!-- Add other fields for editing -->
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+</body>
+</html>

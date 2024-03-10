@@ -1,0 +1,29 @@
+<!-- delete_bus.html -->
+<!DOCTYPE html>
+{% load static %}
+{% include 'AdminNavBar1.html'%}
+{% load messages %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Bus</title>
+    <link rel="stylesheet" href="{% static 'css/delete_bus.css' %}"> <!-- Add your CSS file link -->
+</head>
+<body>
+
+<div class="container">
+    <h1>Delete Bus</h1>
+
+    {% messages %} <!-- Display messages here -->
+
+    <p>Are you sure you want to delete the bus '{{ bus.bus_name }}'?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+        <a href="{% url 'list_buses' %}">Cancel</a>
+    </form>
+</div>
+
+</body>
+</html>

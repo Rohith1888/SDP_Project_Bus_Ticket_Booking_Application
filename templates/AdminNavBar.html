@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BusBus</title>
+    <link rel="stylesheet" href="{% static 'css/NavBar.css'%}" />
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav>
+      <div class="navbar">
+       <div class="logo">
+  <a href="{% url 'MainPage' %}">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAACXBIWXMAAAsTAAALEwEAmpwYAAACX0lEQVR4nO3XS2yNQRjG8WMlBBHqFqQuIVVp6IUIJWjZ0AQhEhs7CSsLFt3ZiIYtIWLHwqI7CxISNmJngwihdQvqVte41k9Gp3w5Oc1xLnq+RZ/dN987M/+8M/PMO5nMsFIojMN+7MPYTFqEKbjpr25gUhrApuIWvmIbtuNbxQExDbcjWFuifTN+4mylwKbjDr5gQ9a/1ri8eyoBNgN3I0Bbjv+H0YdRQw02E/fwGdcwOkfMibjvRg4lWDXu41NYutjWGPYWqhJxu2JWNw0V2Cx0R7C1ifYVMUtXE21j8ATPsCrR3oBDmFxOsDl4gI9YneP/FhzNaluCFzGDD+Ph6Uv4YOmAmItH+JDMwiCxwecuYmL8rsIBXMIFtGNnwgcnlAI2D4/xHs3/EL8O33E+T1zwwR84WCzY/Lhv3mF5Af02YneemDXRuI8UA1aDp3iLZQUP0D/GMVzG+Bxg4VB1FbzvsCCesl4sLQYsjrMjLt2ZQcCqCx1wIZ7jDZqKBcvag62xnFpfClgdevA6+FFBnfMI16OFFAW2CC/xCvUFdc6jUpdycQQLS9lYUOc8wsroj8GEZxfauT5mKzh5XZrAGiJYT9rAaqNVBMuoTc0eC8LpWI/VZNIEFoTj8Q78U/qkAizxMOmKg4W7cC/O4Qo6QhmeqQRYVlUbBhtQd6xyxSqkJVMJsCzAk1mVbVOcqDffu9P/AsszaXPMYHuqwBKTh1ujM41gI2KReaqsBlsmuFCLBW1NTcYSEJ0R7vfbNDVgWTYTYFrCaU4FWA7AAaUDbEDhAaL/xugo6yt9WJny6RfZMThGAFcpEwAAAABJRU5ErkJggg==">
+  </a>
+  <a href="{% url 'MainPage' %}">BusTicket</a>
+</div>
+
+        <ul class="menu">
+          <li><a href="{% url 'AdminLogin' %}">Home</a></li>
+            <li><a href="{% url 'AdminLogin'%}">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+   <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 BusBus. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  </body>
+</html>
